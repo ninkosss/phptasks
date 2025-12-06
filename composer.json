@@ -1,0 +1,13 @@
+{
+    "name": "inna/28",
+    "require": {
+        "monolog/monolog": "^3.9",
+        "symfony/var-dumper": "^8.0",
+        "nesbot/carbon": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inna\\28\\": "src/"
+        }
+    }
+}
