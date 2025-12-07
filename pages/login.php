@@ -1,15 +1,11 @@
 <?php
-session_start();
-
-// Обробка форми входу
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // Простий приклад аутентифікації (в реальному проекті використовуйте базу даних та хешування)
     if ($email === 'admin@example.com' && $password === 'password') {
         $_SESSION['user'] = $email;
-        header('Location: index.php');
+        header('Location: /');
         exit;
     } else {
         $error = 'Невірний email або пароль';
@@ -21,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Вхід в систему</title>
+  <title><?php echo $pageTitle; ?></title>
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="login-page">
   <div class="login-container">
