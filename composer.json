@@ -7,7 +7,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Inna\\28\\": "src/"
+            "Inna\\Task28\\": "src/"
         }
     }
 }
