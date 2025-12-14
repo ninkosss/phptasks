@@ -11,7 +11,6 @@ $navPages = [
 
 $requestUri = $_SERVER['REQUEST_URI'];
 $path = parse_url($requestUri, PHP_URL_PATH);
-
 $path = ltrim($path, '/');
 
 if (empty($path)) {
@@ -26,6 +25,9 @@ if (array_key_exists($currentPage, $navPages)) {
 } elseif ($currentPage === 'login') {
     $pageFile = 'login.php';
     $pageTitle = 'Вхід в систему - AGFT';
+} elseif ($currentPage === 'registration') {
+    $pageFile = 'registration.php';
+    $pageTitle = 'Реєстрація - AGFT';
 } else {
     http_response_code(404);
     $pageFile = '404.php';

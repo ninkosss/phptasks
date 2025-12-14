@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle; ?></title>
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
                     <?php foreach ($navPages as $pageKey => $pageData): ?>
                         <li class="<?php echo ($currentPage === $pageKey) ? 'active' : ''; ?>">
                             <a href="<?php echo $pageKey === 'home' ? '/' : '/' . $pageKey; ?>">
-                                <?php echo $pageData['title']; ?>
+                                <?php echo htmlspecialchars($pageData['title']); ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
@@ -50,8 +50,8 @@
                 ];
                 foreach ($games as $game) {
                     echo '<div class="block">';
-                    echo '<img src="../img/' . $game['img'] . '" alt="' . $game['name'] . '">';
-                    echo '<span><img src="#" alt="">' . $game['name'] . '</span>';
+                    echo '<img src="../img/' . htmlspecialchars($game['img']) . '" alt="' . htmlspecialchars($game['name']) . '">';
+                    echo '<span><img src="#" alt="">' . htmlspecialchars($game['name']) . '</span>';
                     echo '</div>';
                 }
                 ?>
